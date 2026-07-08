@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>shrtarrant.com · 12-Month Search Report</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>">
+</head>
+<body>
+<style>
+  :root {
+    --paper: #faf7f1;
+    --card: #ffffff;
+    --ink: #2a2216;
+    --muted: #6f6353;
+    --faint: #9c8f7a;
+    --line: #e6ddcc;
+    --line-soft: #efe8da;
+    --gold: #b8862b;
+    --gold-deep: #8f6a1f;
+    --gold-wash: #f6edda;
+    --series1: #b8862b;
+    --series2: #3f6fae;
+    --good: #3e7d52;
+    --chip-real: #e9f2ec;
+    --chip-real-ink: #2f5f3f;
+    --chip-est: #f1ece1;
+    --chip-est-ink: #7a6a4a;
+    --chip-rec: #e8eef7;
+    --chip-rec-ink: #33567e;
+    --hatch: rgba(111, 99, 83, 0.16);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #17130b;
+      --card: #211b10;
+      --ink: #f0e8d8;
+      --muted: #b3a68e;
+      --faint: #857a64;
+      --line: #3a331f;
+      --line-soft: #2e2817;
+      --gold: #d9a441;
+      --gold-deep: #d9a441;
+      --gold-wash: #2c2412;
+      --series1: #b8862b;
+      --series2: #5c88cf;
+      --good: #83b893;
+      --chip-real: #22301f;
+      --chip-real-ink: #a5cfae;
+      --chip-rec: #1f2a38;
+      --chip-rec-ink: #a8c2e4;
+      --chip-est: #2e2817;
+      --chip-est-ink: #c0af8c;
+      --hatch: rgba(179, 166, 142, 0.14);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #17130b;
+    --card: #211b10;
+    --ink: #f0e8d8;
+    --muted: #b3a68e;
+    --faint: #857a64;
+    --line: #3a331f;
+    --line-soft: #2e2817;
+    --gold: #d9a441;
+    --gold-deep: #d9a441;
+    --gold-wash: #2c2412;
+    --series1: #b8862b;
+    --series2: #5c88cf;
+    --good: #83b893;
+    --chip-real: #22301f;
+    --chip-real-ink: #a5cfae;
+    --chip-rec: #1f2a38;
+    --chip-rec-ink: #a8c2e4;
+    --chip-est: #2e2817;
+    --chip-est-ink: #c0af8c;
+    --hatch: rgba(179, 166, 142, 0.14);
+  }
+  :root[data-theme="light"] {
+    --paper: #faf7f1;
+    --card: #ffffff;
+    --ink: #2a2216;
+    --muted: #6f6353;
+    --faint: #9c8f7a;
+    --line: #e6ddcc;
+    --line-soft: #efe8da;
+    --gold: #b8862b;
+    --gold-deep: #8f6a1f;
+    --gold-wash: #f6edda;
+    --series1: #b8862b;
+    --series2: #3f6fae;
+    --good: #3e7d52;
+    --chip-real: #e9f2ec;
+    --chip-real-ink: #2f5f3f;
+    --chip-rec: #e8eef7;
+    --chip-rec-ink: #33567e;
+    --chip-est: #f1ece1;
+    --chip-est-ink: #7a6a4a;
+    --hatch: rgba(111, 99, 83, 0.16);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { background: var(--paper); color: var(--ink); }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 40px 20px 72px; }
+
+  .serif, h1, h2 { font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif; }
+  h1, h2, h3 { text-wrap: balance; margin: 0; }
+
+  .eyebrow {
+    font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gold-deep); font-weight: 600; margin-bottom: 14px;
+  }
+  header.masthead { border-bottom: 3px double var(--line); padding-bottom: 26px; margin-bottom: 34px; }
+  h1 { font-size: clamp(30px, 5.4vw, 44px); line-height: 1.12; font-weight: 600; letter-spacing: -0.01em; }
+  .subtitle { color: var(--muted); margin: 14px 0 0; font-size: 16px; max-width: 62ch; }
+  .legend-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+
+  .chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 11.5px; font-weight: 600; letter-spacing: 0.02em;
+    padding: 3px 10px; border-radius: 999px; white-space: nowrap;
+  }
+  .chip.real { background: var(--chip-real); color: var(--chip-real-ink); }
+  .chip.rec  { background: var(--chip-rec);  color: var(--chip-rec-ink); }
+  .chip.est  { background: var(--chip-est);  color: var(--chip-est-ink); }
+
+  section { margin: 44px 0 0; }
+  h2 { font-size: 25px; font-weight: 600; margin-bottom: 6px; }
+  .kicker { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); font-weight: 600; margin-bottom: 8px; }
+  .lede { color: var(--muted); font-size: 15px; margin: 6px 0 20px; max-width: 68ch; }
+
+  /* Stat tiles */
+  .tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  @media (max-width: 760px) { .tiles { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 420px) { .tiles { grid-template-columns: 1fr; } }
+  .tile {
+    background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 16px 16px 14px; display: flex; flex-direction: column; gap: 4px;
+  }
+  .tile .label { font-size: 12.5px; font-weight: 600; color: var(--muted); line-height: 1.35; }
+  .tile .num {
+    font-variant-numeric: tabular-nums;
+    font-size: 27px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15;
+  }
+  .tile .num .from { color: var(--faint); font-size: 17px; font-weight: 600; }
+  .tile .num .arrow { color: var(--gold-deep); font-size: 17px; }
+  .tile .note { font-size: 11.5px; color: var(--faint); line-height: 1.4; margin-top: auto; padding-top: 8px; }
+
+  /* Charts */
+  .charts { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 700px) { .charts { grid-template-columns: 1fr; } }
+  figure.chart {
+    margin: 0; background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 16px 16px 10px; position: relative;
+  }
+  figure.chart h3 { font-size: 14.5px; font-weight: 650; letter-spacing: 0.01em; }
+  figure.chart .src { margin-top: 3px; margin-bottom: 8px; }
+  figure.chart svg { display: block; width: 100%; height: auto; }
+  figcaption { font-size: 11.5px; color: var(--faint); line-height: 1.45; margin-top: 6px; }
+  .gridline { stroke: var(--line-soft); stroke-width: 1; }
+  .axis-t { fill: var(--faint); font-size: 10px; font-variant-numeric: tabular-nums; }
+  .pt-label { fill: var(--ink); font-size: 11px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .s1 .line { stroke: var(--series1); } .s1 .dot { fill: var(--series1); } .s1 .area { fill: var(--series1); opacity: 0.09; }
+  .s2 .line { stroke: var(--series2); } .s2 .dot { fill: var(--series2); } .s2 .area { fill: var(--series2); opacity: 0.09; }
+  .line { fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .dot { stroke: var(--card); stroke-width: 1.5; }
+  .dot.hollow { fill: var(--card); stroke: var(--series2); stroke-width: 2; }
+  .gap-note { fill: var(--faint); font-size: 10px; font-style: italic; }
+  details.data { margin-top: 6px; }
+  details.data summary { font-size: 11px; color: var(--faint); cursor: pointer; }
+  details.data table { font-size: 11.5px; margin-top: 6px; }
+  #tip {
+    position: fixed; pointer-events: none; z-index: 50; display: none;
+    background: var(--ink); color: var(--paper); font-size: 11.5px; font-weight: 600;
+    padding: 4px 9px; border-radius: 7px; font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  /* Table */
+  .tablewrap { overflow-x: auto; background: var(--card); border: 1px solid var(--line); border-radius: 12px; }
+  table { border-collapse: collapse; width: 100%; min-width: 560px; font-size: 13.5px; }
+  th, td { text-align: left; padding: 9px 14px; border-bottom: 1px solid var(--line-soft); }
+  thead th { font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: var(--faint); border-bottom: 1px solid var(--line); }
+  tbody tr:last-child td { border-bottom: none; }
+  td.n { font-variant-numeric: tabular-nums; }
+  .pos { display: inline-block; min-width: 30px; text-align: center; font-weight: 700; font-variant-numeric: tabular-nums;
+         background: var(--gold-wash); color: var(--gold-deep); border-radius: 7px; padding: 1px 7px; }
+  .ai-tag { font-size: 11px; font-weight: 600; color: var(--series2); }
+
+  /* Timeline */
+  .tl { list-style: none; margin: 0; padding: 0; border-left: 2px solid var(--line); }
+  .tl li { position: relative; padding: 0 0 26px 24px; }
+  .tl li:last-child { padding-bottom: 4px; }
+  .tl li::before {
+    content: ""; position: absolute; left: -7px; top: 6px; width: 10px; height: 10px;
+    border-radius: 50%; background: var(--gold); border: 2px solid var(--paper);
+  }
+  .tl .date { font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--gold-deep); }
+  .tl h3 { font-size: 16px; font-weight: 650; margin: 3px 0 5px; }
+  .tl p { margin: 0; color: var(--muted); font-size: 14px; max-width: 66ch; }
+
+  /* Fact grid + honesty */
+  .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 26px; }
+  @media (max-width: 620px) { .facts { grid-template-columns: 1fr; } }
+  .fact { display: flex; gap: 10px; align-items: baseline; font-size: 14px; padding: 7px 0; border-bottom: 1px dotted var(--line); }
+  .fact b { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .fact span { color: var(--muted); }
+
+  .honesty { background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--gold); border-radius: 12px; padding: 20px 22px; }
+  .honesty h2 { font-size: 20px; }
+  .honesty ul { margin: 12px 0 0; padding-left: 18px; }
+  .honesty li { margin: 0 0 10px; font-size: 14px; color: var(--muted); max-width: 72ch; }
+  .honesty li strong { color: var(--ink); }
+
+  footer { margin-top: 52px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--faint); font-size: 12.5px; }
+  footer p { margin: 4px 0; max-width: 76ch; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    section, header.masthead { animation: rise 0.5s ease both; }
+    @keyframes rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+  }
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="eyebrow">Salvation Home Remodeling &middot; shrtarrant.com</div>
+    <h1>Twelve months in Google&nbsp;search</h1>
+    <p class="subtitle">July 2025 &rarr; July 2026 &middot; prepared July 8, 2026. Metric history covers the full year; the hands&#8209;on optimization push ran <strong>June&nbsp;11 &ndash; July&nbsp;8, 2026</strong>.</p>
+    <div class="legend-row">
+      <span class="chip real">&#9679; REAL &mdash; Google Search Console / counted directly</span>
+      <span class="chip rec">&#9681; RECORDED &mdash; third-party tool data, independently checkable</span>
+      <span class="chip est">&#9675; ESTIMATE &mdash; model output, labeled as such</span>
+    </div>
+  </header>
+
+  <section>
+    <div class="kicker">The headline numbers</div>
+    <div class="tiles">
+      <div class="tile">
+        <div class="label">Keywords in Google&rsquo;s top&nbsp;3</div>
+        <div class="num"><span class="from">3</span> <span class="arrow">&rarr;</span> 21</div>
+        <div class="note">Ahrefs position snapshots, Jul&nbsp;1&nbsp;&rsquo;25 &rarr; Jul&nbsp;1&nbsp;&rsquo;26. Sat at <b>zero</b> from Oct&nbsp;&rsquo;25 to Feb&nbsp;&rsquo;26.</div>
+      </div>
+      <div class="tile">
+        <div class="label">Real monthly impressions in Google</div>
+        <div class="num"><span class="from">13.6k</span> <span class="arrow">&rarr;</span> 54.5k</div>
+        <div class="note">Google Search Console (real), Aug&nbsp;&rsquo;25 &rarr; Mar&nbsp;&rsquo;26 peak. &asymp;4&times;. Newer months not yet synced.</div>
+      </div>
+      <div class="tile">
+        <div class="label">Core Fort Worth terms on page&nbsp;1</div>
+        <div class="num">12<span class="from">/12</span></div>
+        <div class="note">Every tracked money keyword (kitchen, bath, additions, remodeling) &mdash; verified July&nbsp;8, Ahrefs&nbsp;US.</div>
+      </div>
+      <div class="tile">
+        <div class="label">Website authority (Ahrefs&nbsp;DR)</div>
+        <div class="num"><span class="from">4.2</span> <span class="arrow">&rarr;</span> 19</div>
+        <div class="note">Climbed Jul&nbsp;&rsquo;25&ndash;Mar&nbsp;&rsquo;26, flat since &mdash; predates the June work; listed as a year fact, not a claimed result.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="kicker">The year, charted</div>
+    <h2>A winter slide, then a spring&ndash;summer turnaround</h2>
+    <p class="lede">Rankings eroded through fall and bottomed out in December&ndash;February (zero top-3 keywords). Recovery began in May; during the June&ndash;July work the site went on to its best numbers of the year.</p>
+    <div class="charts">
+
+      <figure class="chart s1" id="c-top3">
+        <h3>Keywords ranked in Google&rsquo;s top 3</h3>
+        <div class="src"><span class="chip rec">&#9681; RECORDED &mdash; Ahrefs position data</span></div>
+        <figcaption>Monthly snapshots, all keywords. 3 &rarr; 0 (five straight months) &rarr; 21.</figcaption>
+      </figure>
+
+      <figure class="chart s2" id="c-clicks">
+        <h3>Real clicks from Google per month</h3>
+        <div class="src"><span class="chip real">&#9679; Google Search Console &mdash; real</span></div>
+        <figcaption>15/mo (Aug) grew to 119/mo (Feb). April is partial; sync broke Apr&nbsp;6 and was reconnected Jul&nbsp;3 &mdash; May/Jun real clicks aren&rsquo;t available yet.</figcaption>
+      </figure>
+
+      <figure class="chart s1" id="c-est">
+        <h3>Estimated organic visits per month</h3>
+        <div class="src"><span class="chip est">&#9675; Ahrefs model &mdash; an estimate, not clicks</span></div>
+        <figcaption>489 &rarr; 142 (Feb trough) &rarr; 805. Direction is trustworthy; the level is not &mdash; this model has run roughly 3&times; above real clicks for this site.</figcaption>
+      </figure>
+
+      <figure class="chart s2" id="c-dr">
+        <h3>Domain Rating (site authority, 0&ndash;100)</h3>
+        <div class="src"><span class="chip rec">&#9681; RECORDED &mdash; Ahrefs</span></div>
+        <figcaption>4.2 &rarr; 19 by March, then a plateau. Growing this again is the main long-term lever.</figcaption>
+      </figure>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="kicker">Where it ranks right now</div>
+    <h2>Page 1 of Google &mdash; verified July 8, 2026</h2>
+    <p class="lede">Ahrefs, United States, searches/month &ge; 30. Every one of these is earned (no ads have been run &mdash; the site is all-organic). All local terms currently rank via the homepage.</p>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>Keyword</th><th>Position</th><th>Searches/mo</th><th>Result type</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>home remodeling fort worth</td><td><span class="pos">#2</span></td><td class="n">250</td><td>Organic</td></tr>
+          <tr><td>kitchen remodeling in fort worth</td><td><span class="pos">#2</span></td><td class="n">200</td><td>Organic</td></tr>
+          <tr><td>fort worth home remodeling</td><td><span class="pos">#3</span></td><td class="n">200</td><td>Organic</td></tr>
+          <tr><td>kitchen remodeling fort worth</td><td><span class="pos">#3</span></td><td class="n">200</td><td>Organic</td></tr>
+          <tr><td>home additions fort worth</td><td><span class="pos">#5</span></td><td class="n">200</td><td>Organic</td></tr>
+          <tr><td>fort worth remodeling contractors</td><td><span class="pos">#5</span></td><td class="n">150</td><td>Organic</td></tr>
+          <tr><td>kitchen remodeling contractors fort worth tx</td><td><span class="pos">#8</span></td><td class="n">150</td><td>Organic</td></tr>
+          <tr><td>remodeling contractors fort worth</td><td><span class="pos">#9</span></td><td class="n">200</td><td>Organic</td></tr>
+          <tr><td>bathroom remodel fort worth</td><td><span class="pos">#9</span></td><td class="n">200</td><td>Organic</td></tr>
+          <tr><td>kitchen remodel fort worth</td><td><span class="pos">#9</span></td><td class="n">200</td><td>Organic</td></tr>
+          <tr><td>remodeling fort worth</td><td><span class="pos">#9</span></td><td class="n">150</td><td>Organic</td></tr>
+          <tr><td>bathroom remodeling fort worth</td><td><span class="pos">#10</span></td><td class="n">300</td><td>Organic &mdash; entered page 1 in June</td></tr>
+          <tr><td>quartz vs granite vs marble</td><td><span class="pos">#1</span></td><td class="n">350</td><td><span class="ai-tag">AI Overview citation</span> &mdash; blog guide</td></tr>
+          <tr><td>slab countertops</td><td><span class="pos">#1</span></td><td class="n">300</td><td><span class="ai-tag">AI Overview citation</span> &mdash; blog guide</td></tr>
+          <tr><td>granite vs quartz vs marble</td><td><span class="pos">#1</span></td><td class="n">200</td><td><span class="ai-tag">AI Overview citation</span> &mdash; blog guide</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="lede" style="margin-top:12px">The three #1 spots are Google&rsquo;s AI answer citing two of the blog guides that were rewritten from scratch in late June &mdash; national queries, so they build visibility rather than local leads, but they&rsquo;re a direct trace of the content work. During May&nbsp;&rarr;&nbsp;July, &ldquo;fort worth kitchen remodeling&rdquo; moved #10&nbsp;&rarr;&nbsp;#1&ndash;3 and &ldquo;bathroom remodeling fort worth&rdquo; went from unranked to page&nbsp;1.</p>
+  </section>
+
+  <section>
+    <div class="kicker">Business results</div>
+    <h2>Leads</h2>
+    <div class="facts">
+      <div class="fact"><b>13 &rarr; 20</b><span>quote-form submissions, May &rarr; June (+54%) &mdash; counted in the inbox after spam filtering. June did that despite a 6-day form outage that was found and fixed mid-month.</span></div>
+      <div class="fact"><b>4 in 2 days</b><span>form leads July 1&ndash;2. Phone calls and WhatsApp messages aren&rsquo;t counted here &mdash; the real total is higher than these numbers.</span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="kicker">The work</div>
+    <h2>What was actually done (June 11 &ndash; July 8)</h2>
+    <p class="lede">Dozens of live fixes across six working stretches &mdash; every change verified on the live site afterward, and 27 locked regression checks now re-test all past fixes after every new change so improvements can&rsquo;t silently break.</p>
+    <ol class="tl">
+      <li>
+        <div class="date">June 11&ndash;13 &middot; Technical deep-clean</div>
+        <h3>Every crawl error and warning fixed &mdash; site health to 100/100</h3>
+        <p>Full audit, then fixes across ~140 URLs: root-caused duplicate structured-data (schema) layers, built the kitchen hub + city pages, fixed bathroom content that had leaked onto all 12 kitchen city pages, standardized pricing sitewide.</p>
+      </li>
+      <li>
+        <div class="date">June 16&ndash;19 &middot; Trust &amp; accuracy pass</div>
+        <h3>19-agent audit &rarr; 69 verified findings &rarr; fixes shipped</h3>
+        <p>Clickable phone number in the footer, private tax IDs stripped from public code, service area corrected to Tarrant/Parker counties, About page rebuilt with real testimonials, llms.txt added for AI search engines, and inaccurate &ldquo;licensed general contractor&rdquo; wording removed (Texas doesn&rsquo;t license GCs &mdash; the site now says exactly what&rsquo;s true: city-registered and insured, since 2001).</p>
+      </li>
+      <li>
+        <div class="date">June 18 &middot; The invisible revenue bug</div>
+        <h3>Found &amp; fixed a silent contact-form outage</h3>
+        <p>A captcha plugin combined with a caching feature had been silently blocking every logged-out/mobile quote submission for ~6 days. Replaced with an invisible server-side spam filter &mdash; later verified: 0 of 12 real leads blocked, 17 of 18 spam caught, plus a backup copy of every lead.</p>
+      </li>
+      <li>
+        <div class="date">June 27&ndash;28 &middot; Content integrity rebuild</div>
+        <h3>17 blog posts rewritten from scratch; geography fixed on ~43 pages</h3>
+        <p>Old imported posts contained fabricated case studies, fake testimonials, and images hot-linked from competitors &mdash; all replaced with accurate, owner-voice, Texas-specific content. Removed stray &ldquo;Dallas/DFW&rdquo; targeting so the site is purely Tarrant/Parker. 14 page titles rewritten keyword-first. Crash-proofed robots.txt.</p>
+      </li>
+      <li>
+        <div class="date">June 29 &ndash; July 3 &middot; Off-site push</div>
+        <h3>Spam-link cleanup, outreach, and conversion pass</h3>
+        <p>A ~300-domain spam-link flood was hitting the site; a 308-domain disavow file was built and uploaded to Google (verified). 17 link-outreach emails sent to chambers, associations and local media; a Trusted Partners page went live; Google Business Profile access recovered and Search Console reconnected. On-site: mobile sticky call bar and a trust strip + quote form added to both money pages.</p>
+      </li>
+      <li>
+        <div class="date">July 7&ndash;8 &middot; Lead-capture hardening</div>
+        <h3>Quote form now takes 5 photos &times; 20&nbsp;MB &mdash; and a photo-loss bug is dead</h3>
+        <p>Customers can attach real project photos; a pre-existing bug that silently discarded uploads was fixed, photos are now stored and linked in every lead email. Homepage process section rebuilt on the new gold design tokens; stray escaped characters cleaned off 4 pages including the quote form; business-listing addresses audited (fixes staged for two directories still showing an old address).</p>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="kicker">The site today</div>
+    <h2>Size &amp; health</h2>
+    <div class="facts">
+      <div class="fact"><b>114 pages</b><span>of indexed content (July crawl), including 42 city &amp; service-area pages across Tarrant/Parker counties</span></div>
+      <div class="fact"><b>100/100</b><span>Ahrefs site-health score &mdash; zero crawl errors or warnings outstanding</span></div>
+      <div class="fact"><b>92/92</b><span>pages live-verified with visible phone, click-to-call, WhatsApp, and the quote form</span></div>
+      <div class="fact"><b>113 pages</b><span>carrying complete LocalBusiness structured data (name, geo, hours, founding 2001)</span></div>
+      <div class="fact"><b>5.0&#9733; &times; 120</b><span>Google Business Profile reviews (perfect score; count currently stalled &mdash; see below)</span></div>
+      <div class="fact"><b>27 invariants</b><span>locked regression checks that re-verify every past fix after each new change</span></div>
+    </div>
+  </section>
+
+  <section class="honesty">
+    <h2 class="serif">How to read these numbers (the honest part)</h2>
+    <ul>
+      <li><strong>Estimates are labeled estimates.</strong> Ahrefs &ldquo;traffic&rdquo; is a model; in the months where both existed, it ran roughly 3&times; above real Search Console clicks for this site. Trust its direction, not its level.</li>
+      <li><strong>There&rsquo;s a real-data gap.</strong> Search Console&rsquo;s feed broke April 6 and was reconnected July 3 &mdash; real May/June clicks weren&rsquo;t available yet when this was written, and April is partial.</li>
+      <li><strong>Timing vs. credit.</strong> The ranking recovery began in May, before the hands-on work started June 11. The June&ndash;July gains (kitchen terms to #1&ndash;3, bathroom onto page 1, top-3 count 19 &rarr; 21, best estimated-traffic months of the year) are consistent with the work &mdash; but one site&rsquo;s data can&rsquo;t prove cause.</li>
+      <li><strong>Authority rose before the engagement.</strong> DR 4.2 &rarr; 19 happened between July 2025 and March 2026 and has been flat since. Recent &ldquo;new links&rdquo; were mostly a spam flood &mdash; now disavowed, which protects the site but was claimed as no ranking gain.</li>
+      <li><strong>Still weak, on purpose in this report:</strong> the local map pack is flat (~2% visibility across 10 weekly grid scans), reviews are stalled at 120, and the homepage still earns ~95% of all search traffic while the kitchen/bathroom pages don&rsquo;t rank on their own yet &mdash; that&rsquo;s the biggest untapped lever for the next stretch.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>Prepared July 8, 2026 for Salvation Home Remodeling LLC &middot; shrtarrant.com &middot; all-organic (no paid ads).</p>
+    <p>Sources: Google Search Console (real clicks &amp; impressions) &middot; Ahrefs (positions, keyword counts, DR; traffic figures are model estimates and labeled) &middot; Local Falcon (map-pack grid scans) &middot; site inbox (lead counts, after spam filtering).</p>
+  </footer>
+
+</div>
+
+<div id="tip" role="status"></div>
+
+<script>
+(function () {
+  var MONTHS = ["Jul '25","Aug '25","Sep '25","Oct '25","Nov '25","Dec '25","Jan '26","Feb '26","Mar '26","Apr '26","May '26","Jun '26","Jul '26"];
+
+  var CHARTS = [
+    { id: "c-top3",   name: "Top-3 keywords", start: 0,
+      data: [3,1,1,0,0,0,0,0,1,1,6,19,21] },
+    { id: "c-clicks", name: "Real clicks", start: 1, gapAfter: true, partialLast: true,
+      data: [15,41,34,62,90,110,119,82,44] },
+    { id: "c-est",    name: "Est. visits", start: 0,
+      data: [489,409,373,279,183,184,161,142,183,254,319,594,805] },
+    { id: "c-dr",     name: "Domain Rating", start: 0,
+      data: [4.2,4.4,6,5,11,12,11,18,19,19,19,19,19] }
+  ];
+
+  var W = 380, H = 190, PAD = { l: 34, r: 14, t: 14, b: 24 };
+  var NS = "http://www.w3.org/2000/svg";
+  var tip = document.getElementById("tip");
+
+  function el(tag, attrs, parent) {
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  function fmt(v) { return v >= 1000 ? (v / 1000).toFixed(1) + "k" : ("" + v); }
+
+  CHARTS.forEach(function (c) {
+    var fig = document.getElementById(c.id);
+    if (!fig) return;
+
+    var n = 13; // 13 month slots always, so charts align
+    var max = Math.max.apply(null, c.data) * 1.12;
+    if (max < 5) max = 5;
+    var iw = W - PAD.l - PAD.r, ih = H - PAD.t - PAD.b;
+    var x = function (i) { return PAD.l + (iw * i) / (n - 1); };
+    var y = function (v) { return PAD.t + ih - (ih * v) / max; };
+
+    var svg = el("svg", { viewBox: "0 0 " + W + " " + H, role: "img",
+      "aria-label": c.name + " by month, " + MONTHS[c.start] + " to " + MONTHS[c.start + c.data.length - 1] });
+
+    // hatch pattern (per-svg, unique id)
+    var defs = el("defs", {}, svg);
+    var pat = el("pattern", { id: "hp-" + c.id, width: 6, height: 6, patternUnits: "userSpaceOnUse", patternTransform: "rotate(45)" }, defs);
+    el("rect", { width: 6, height: 6, fill: "transparent" }, pat);
+    el("line", { x1: 0, y1: 0, x2: 0, y2: 6, stroke: "var(--hatch)", "stroke-width": 3 }, pat);
+
+    // gridlines + y tick labels (3 lines)
+    [0.0, 0.5, 1.0].forEach(function (f) {
+      var vy = PAD.t + ih - ih * f;
+      el("line", { x1: PAD.l, x2: W - PAD.r, y1: vy, y2: vy, "class": "gridline" }, svg);
+      var lbl = el("text", { x: PAD.l - 5, y: vy + 3, "text-anchor": "end", "class": "axis-t" }, svg);
+      lbl.textContent = fmt(Math.round(max * f));
+    });
+
+    // x labels: first, middle, last of the full 13-slot axis
+    [0, 6, 12].forEach(function (i) {
+      var t = el("text", { x: x(i), y: H - 7, "text-anchor": i === 0 ? "start" : (i === 12 ? "end" : "middle"), "class": "axis-t" }, svg);
+      t.textContent = MONTHS[i];
+    });
+
+    // data-gap hatch (clicks chart: after last real point)
+    var lastIdx = c.start + c.data.length - 1;
+    if (c.gapAfter && lastIdx < n - 1) {
+      el("rect", { x: x(lastIdx), y: PAD.t, width: x(n - 1) - x(lastIdx), height: ih, rx: 4, "class": "gap-hatch", fill: "url(#hp-" + c.id + ")" }, svg);
+      var gn = el("text", { x: (x(lastIdx) + x(n - 1)) / 2, y: PAD.t + ih / 2 - 2, "text-anchor": "middle", "class": "gap-note" }, svg);
+      gn.textContent = "not synced yet";
+    }
+
+    // area + line
+    var pts = c.data.map(function (v, i) { return [x(c.start + i), y(v)]; });
+    var lineStr = pts.map(function (p) { return p[0].toFixed(1) + "," + p[1].toFixed(1); }).join(" ");
+    el("polygon", { points: lineStr + " " + pts[pts.length - 1][0].toFixed(1) + "," + (PAD.t + ih) + " " + pts[0][0].toFixed(1) + "," + (PAD.t + ih), "class": "area" }, svg);
+    el("polyline", { points: lineStr, "class": "line" }, svg);
+
+    // dots: endpoints + min/max emphasized; last point hollow if partial
+    var minV = Math.min.apply(null, c.data), maxV = Math.max.apply(null, c.data);
+    c.data.forEach(function (v, i) {
+      var isEnd = i === 0 || i === c.data.length - 1;
+      var isExt = v === minV || v === maxV;
+      if (!isEnd && !isExt) return;
+      var cls = "dot" + (c.partialLast && i === c.data.length - 1 ? " hollow" : "");
+      el("circle", { cx: x(c.start + i), cy: y(v), r: 4, "class": cls }, svg);
+    });
+
+    // endpoint value labels
+    var first = c.data[0], last = c.data[c.data.length - 1];
+    var t1 = el("text", { x: x(c.start) + 2, y: y(first) - 8, "class": "pt-label", "text-anchor": "start" }, svg);
+    t1.textContent = fmt(first);
+    var t2 = el("text", { x: x(lastIdx) + (c.gapAfter ? 4 : -2), y: y(last) - 8, "class": "pt-label", "text-anchor": c.gapAfter ? "start" : "end" }, svg);
+    t2.textContent = fmt(last) + (c.partialLast ? " (partial)" : "");
+
+    // hover: nearest point tooltip
+    var hot = el("rect", { x: PAD.l, y: PAD.t, width: iw, height: ih, fill: "transparent" }, svg);
+    var cursor = el("circle", { r: 5.5, "class": "dot", style: "display:none" }, svg);
+    hot.addEventListener("mousemove", function (ev) {
+      var box = svg.getBoundingClientRect();
+      var mx = (ev.clientX - box.left) * (W / box.width);
+      var idx = Math.round(((mx - PAD.l) / iw) * (n - 1)) - c.start;
+      if (idx < 0) idx = 0;
+      if (idx > c.data.length - 1) idx = c.data.length - 1;
+      cursor.setAttribute("cx", x(c.start + idx));
+      cursor.setAttribute("cy", y(c.data[idx]));
+      cursor.style.display = "";
+      tip.textContent = MONTHS[c.start + idx] + " · " + c.data[idx].toLocaleString();
+      tip.style.display = "block";
+      tip.style.left = (ev.clientX + 12) + "px";
+      tip.style.top = (ev.clientY - 26) + "px";
+    });
+    hot.addEventListener("mouseleave", function () {
+      cursor.style.display = "none";
+      tip.style.display = "none";
+    });
+
+    var cap = fig.querySelector("figcaption");
+    fig.insertBefore(svg, cap);
+
+    // data table fallback
+    var det = document.createElement("details");
+    det.className = "data";
+    var rows = c.data.map(function (v, i) {
+      return "<tr><td>" + MONTHS[c.start + i] + "</td><td class='n'>" + v.toLocaleString() + "</td></tr>";
+    }).join("");
+    det.innerHTML = "<summary>View as data table</summary><table><thead><tr><th>Month</th><th>" + c.name + "</th></tr></thead><tbody>" + rows + "</tbody></table>";
+    fig.appendChild(det);
+  });
+})();
+</script>
+
+</body>
+</html>
