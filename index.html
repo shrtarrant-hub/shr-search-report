@@ -270,7 +270,7 @@
   <section>
     <div class="kicker">The year, charted</div>
     <h2>A winter slide, then a spring&ndash;summer turnaround</h2>
-    <p class="lede">Rankings eroded through fall and bottomed out in December&ndash;February (zero top-3 keywords). Recovery began in May &mdash; and May&ndash;June then posted the site&rsquo;s best real months of the year: a record 82k impressions in May, and June&rsquo;s 141 clicks, the highest in this series.</p>
+    <p class="lede">Rankings eroded through fall and bottomed out in December&ndash;February (zero top-3 keywords). Recovery took hold in the spring &mdash; and April&ndash;June posted the site&rsquo;s best real stretch of the year: a record 82k impressions in May, and June&rsquo;s 141 clicks, the highest in this series.</p>
     <div class="charts">
 
       <figure class="chart s1" id="c-top3">
@@ -282,7 +282,7 @@
       <figure class="chart s2" id="c-clicks">
         <h3>Real clicks from Google per month</h3>
         <div class="src"><span class="chip real">&#9679; Google Search Console &mdash; real</span></div>
-        <figcaption>15/mo (Aug) grew to 119 (Feb); after a spring dip, <strong>June hit 141 &mdash; the best month in this series</strong>. May &amp; June were read directly from Search Console on Jul&nbsp;8. April&rsquo;s total is incomplete (hollow dot &mdash; sync outage); July is still in progress.</figcaption>
+        <figcaption>15/mo (Aug) grew to 119 (Feb), dipped in March, then April 121, May 116 and <strong>June 141 &mdash; the best month in this series</strong>. April&ndash;June were read directly from Search Console on Jul&nbsp;8; July is still in progress.</figcaption>
       </figure>
 
       <figure class="chart s1" id="c-est">
@@ -395,7 +395,7 @@
     <h2 class="serif">How to read these numbers (the honest part)</h2>
     <ul>
       <li><strong>Estimates are labeled estimates.</strong> Ahrefs &ldquo;traffic&rdquo; is a model; in the months where both existed, it ran roughly 3&times; above real Search Console clicks for this site. Trust its direction, not its level.</li>
-      <li><strong>One month is still incomplete.</strong> The automated Search Console feed broke April 6 (reconnected July 3, still backfilling), so April&rsquo;s monthly total is partial. The May and June figures were read directly from Search Console itself on July 8 &mdash; real numbers, straight from the source.</li>
+      <li><strong>How the newest months were sourced.</strong> The automated Search Console feed broke April 6 (reconnected July 3, still backfilling), so the April&ndash;June figures were read directly from Search Console itself on July 8 &mdash; real numbers, straight from the source.</li>
       <li><strong>Timing vs. credit.</strong> The ranking recovery began in May, before the hands-on work started June 11. The June&ndash;July gains (kitchen terms to #1&ndash;3, bathroom onto page 1, top-3 count 19 &rarr; 21, and the best real click and impression months in this series) are consistent with the work &mdash; but one site&rsquo;s data can&rsquo;t prove cause.</li>
       <li><strong>Authority rose before the engagement.</strong> DR 4.2 &rarr; 19 happened between July 2025 and March 2026 and has been flat since. Recent &ldquo;new links&rdquo; were mostly a spam flood &mdash; now disavowed, which protects the site but was claimed as no ranking gain.</li>
       <li><strong>Still weak, on purpose in this report:</strong> the local map pack is flat (~2% visibility across 10 weekly grid scans), reviews are stalled at 120, and the homepage still earns ~95% of all search traffic while the kitchen/bathroom pages don&rsquo;t rank on their own yet &mdash; that&rsquo;s the biggest untapped lever for the next stretch.</li>
@@ -418,8 +418,8 @@
   var CHARTS = [
     { id: "c-top3",   name: "Top-3 keywords", start: 0,
       data: [3,1,1,0,0,0,0,0,1,1,6,19,21] },
-    { id: "c-clicks", name: "Real clicks", start: 1, gapAfter: true, partialIdx: 8,
-      data: [15,41,34,62,90,110,119,82,44,116,141] },
+    { id: "c-clicks", name: "Real clicks", start: 1, gapAfter: true,
+      data: [15,41,34,62,90,110,119,82,121,116,141] },
     { id: "c-est",    name: "Est. visits", start: 0,
       data: [489,409,373,279,183,184,161,142,183,254,319,594,805] },
     { id: "c-dr",     name: "Domain Rating", start: 0,
